@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar" id="sidebar">
+        <h2>✦ Nova AI</h2>
+        <button id="newChat" class="new-chat">＋ New chat</button>
+        <p class="side-title">YOUR CHATS</p>
+        <div id="history" class="history"></div>
+        <div class="profile">✦ &nbsp; Powered by Gemini</div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+            <strong>Nova AI</strong>
+            <span class="model-label">● Gemini AI</span>
+        </header>
+
+        <section class="chat-area">
+            <div id="welcome" class="welcome">
+                <div class="logo">✦</div>
+                <h1>What can I help with?</h1>
+                <p>Ask anything. Learn something new. Create something amazing.</p>
+
+                <div class="suggestions">
+                    <button class="suggestion" data-prompt="Explain Python in simple words">
+                        <b>Learn something</b>
+                        <span>Understand a new topic</span>
+                    </button>
+                    <button class="suggestion" data-prompt="Give me three AI project ideas for an MCA student">
+                        <b>Explore ideas</b>
+                        <span>Find your next project</span>
+                    </button>
+                    <button class="suggestion" data-prompt="Write a Python program to check if a number is prime">
+                        <b>Write code</b>
+                        <span>Build a simple program</span>
+                    </button>
+                    <button class="suggestion" data-prompt="Create a daily study timetable for a computer science student">
+                        <b>Plan your day</b>
+                        <span>Organize your study time</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="messages" class="messages" aria-live="polite"></div>
+        </section>
+
+        <footer class="composer-wrap">
+            <form id="chatForm" class="composer">
+                <textarea id="messageInput" rows="1" maxlength="4000"
+                    placeholder="Message Nova AI..." required></textarea>
+                <div class="composer-bottom">
+                    <span>AI can make mistakes. Verify important information.</span>
+                    <button id="sendBtn" type="submit" aria-label="Send message">↑</button>
+                </div>
+            </form>
+            <p class="footer-note">Made with Python, Flask and Gemini API</p>
+        </footer>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
